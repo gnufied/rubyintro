@@ -20,23 +20,23 @@
 
   Javascript:
   
-    1 + "Hello" => "1Hello"
+        1 + "Hello" => "1Hello"
     
   Ruby:
     
-    1 + "Hello" => TypeError: String can't be coerced into Fixnum
+        1 + "Hello" => TypeError: String can't be coerced into Fixnum
     
   A way to get around Ruby error:
   
-    class Fixnum; def +(other); "#{self}#{other}"; end; end
+        class Fixnum; def +(other); "#{self}#{other}"; end; end
     
   Javascript:
   
-    [cow, hen,python].collect_milk => 3 litre of milk
+        [cow, hen,python].collect_milk => 3 litre of milk
     
   Ruby:
   
-    [cow,hen,pyhton].collect_milk => DumbassError: can't milk a hen
+        [cow,hen,pyhton].collect_milk => DumbassError: can't milk a hen
     
 
    Unlike a statically typed language, strong typing is not built
@@ -55,10 +55,10 @@
 
 * Creating a class and instantiating it:
 
-    class Car
-    end
+        class Car
+        end
     
-    car1 = Car.new()
+        car1 = Car.new()
     
 * Modules and using them
   A Module is a collection of methods and constants. 
@@ -75,20 +75,21 @@
     
 * Duck Typing:
 
-    animals = [Cow.new(),Goat.new()]
     
-    def collect_milk(animals)
-      milk = []
-      animals.each do |animal|
-        if animal.respond_to?(:milkit)
-          milk << animal.milkit
-        else
-          raise DumbassError.new("Cant milk #{animal.inspect}")
+        animals = [Cow.new(),Goat.new()]
+        
+        def collect_milk(animals)
+          milk = []
+          animals.each do |animal|
+            if animal.respond_to?(:milkit)
+              milk << animal.milkit
+            else
+              raise DumbassError.new("Cant milk #{animal.inspect}")
+            end
+          end
+          milk
         end
-      end
-      milk
-    end
-  
+
 
   Duck typed and yet strongly typed. Why? - why can't we just ignore
   animals that can't be milked?
