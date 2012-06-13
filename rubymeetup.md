@@ -87,7 +87,37 @@
   
   For more information:
     http://www.ruby-doc.org/core-1.9.3/BasicObject.html
-    
+
+* The confusing class hierarchy:
+
+        YourClass -> instance of Class
+        |
+        superclass(Object)
+        |
+        superclass(BasicObject)
+        
+        
+        Class
+        |
+        superlcass(Module)
+        |
+        superclass(Object)
+        |
+        superclass(BasicObject)
+        
+        
+        instance of <YourClass>
+         - instance methods of YourClass
+         - instance methods of Object
+         - instance methods of BasicObject
+     
+        in YourClass
+         - instance methods of class Class
+         - instance methods of class Module
+         - instance methods of class Object
+         - instance methods of class BasicObject
+
+
 * Duck Typing:
 
     
