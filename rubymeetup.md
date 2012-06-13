@@ -61,10 +61,25 @@
         car1 = Car.new()
     
 * Modules and using them
+
   A Module is a collection of methods and constants. 
   The methods in a module may be instance methods or module methods. 
-  Instance methods appear as methods in a class when the module is included, module methods do not.    
-    
+  Instance methods appear as methods in a class when the module is included, module methods do not.
+  
+  For example:
+  
+        module Shapes
+          def perimeter; end
+          def area; end
+        end
+        
+        class Circle
+          include Shapes
+        end
+        
+        circle = Circle.new()
+        circle.area()
+        
 * In 1.9, Parent class of all classes is `BasicObject` but in Ruby 1.8 it used to be
   `Object` class. In 1.9 `Object` class sits one level below `BasicObject` class and most
   important difference between two is `Object` class includes `Kernel` module whereas
