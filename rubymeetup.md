@@ -36,13 +36,13 @@
     
   Ruby:
   
-        [cow,hen,pyhton].collect_milk => DumbassError: can't milk a hen
+        [cow,hen,python].collect_milk => DumbassError: can't milk a hen
     
 
    Unlike a statically typed language, strong typing is not built
    into the language and it is more of a Ruby way of doing things.
    
-   Avoid automatic type coercian.
+   Avoid automatic type coercion.
    
 * Object & Classes
 
